@@ -1,0 +1,357 @@
+ index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mitra Desai | Portfolio</title>
+    <meta name="description" content="Official portfolio of Mitra Desai, an aspiring physician and academic researcher specializing in biology, chemistry, and computational healthcare AI.">
+    <style>
+        :root {
+            --primary: #1a365d; /* Deep professional blue */
+            --secondary: #2b6cb0; /* Slate blue accent */
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --bg-light: #f7fafc;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--primary);
+            letter-spacing: 0.5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        section {
+            padding: 5rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            padding-top: 9rem;
+            padding-bottom: 6rem;
+            text-align: left;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            max-width: 700px;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 2.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 6px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            border: 1px solid #edf2f7;
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .card .subtitle {
+            color: var(--secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .skills-list span {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 400;
+            margin-top: 0.25rem;
+        }
+
+        ul.achievements-list {
+            list-style-type: none;
+        }
+
+        ul.achievements-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        ul.achievements-list li::before {
+            content: "•";
+            color: var(--secondary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+            top: -2px;
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-info strong {
+            color: var(--primary);
+        }
+
+        footer {
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 1rem; }
+            .hero h1 { font-size: 2.25rem; }
+            section { padding: 3rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">MITRA DESAI</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Core Skills</a></li>
+                <li><a href="#project">Research & AI</a></li>
+                <li><a href="#experience">Clinical Experience</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about" class="hero">
+        <h1>Mitra Desai</h1>
+        <h2>Aspiring Physician & Academic Researcher</h2>
+        <p>I am an incoming 12th-grade student dedicated to pursuing a career in medicine. My academic focus centers strictly on the intersection of biological sciences and chemical systems, alongside a profound dedication to classical piano performance. Currently, I am leveraging computational models to bridge the gap between healthcare data and clinical diagnostics.</p>
+        <a href="#contact" class="btn">Get In Touch</a>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">Core Skills & Expertise</h2>
+        <div class="grid">
+            <div class="card">
+                <ul class="skills-list">
+                    <li>Biology <span>Advanced conceptual knowledge, molecular systems, and clinical pathology alignment.</span></li>
+                    <li>Chemistry <span>Analytical laboratory frameworks, chemical reactions, and biochemical foundations.</span></li>
+                    <li>Piano <span>Advanced performance, music theory, high-level discipline, and cognitive focus.</span></li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Languages</h3>
+                <p style="margin-top: 1rem;"><strong>Fluent/Proficient in:</strong></p>
+                <p style="color: var(--text-light); margin-top: 0.5rem;">English, Dari, and French</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="project" style="background-color: var(--white);">
+        <div style="max-width: 1100px; margin: 0 auto;">
+            <h2 class="section-title">Current Research Project</h2>
+            <div class="card" style="box-shadow: none; padding: 0;">
+                <h3>Diabetic Retinopathy Predictive AI</h3>
+                <div class="subtitle">Computational Healthcare Initiative</div>
+                <p style="color: var(--text-light); margin-bottom: 1.5rem;">
+                    Developing an artificial intelligence model engineered to analyze retinal imaging data for the early detection and predictive diagnosis of Diabetic Retinopathy. This project seeks to optimize clinical diagnostic efficiency and mitigate preventable vision loss.
+                </p>
+                <a href="https://github.com/mitrafdesai-ai/Foresight-" target="_blank" class="btn" style="background-color: var(--secondary);">View GitHub Repository</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2 class="section-title">Clinical Experience</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Sir H. N. Reliance Foundation Hospital</h3>
+                <div class="subtitle">Clinical Observer | Mumbai, India</div>
+                <p style="color: var(--text-light);">Completed a rigorous two-week immersive clinical work experience, observing healthcare delivery, inpatient care dynamics, and hospital workflows within a premier tertiary care facility.</p>
+            </div>
+            <div class="card">
+                <h3>Royal Oldham Hospital & Fairfield General Hospital</h3>
+                <div class="subtitle">Clinical Observer | United Kingdom</div>
+                <p style="color: var(--text-light);">Engaged in a structured one-week medical work experience, gaining direct insight into NHS clinical operations, multi-disciplinary team consultations, and acute patient care infrastructure.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements" style="background-color: var(--white);">
+        <div style="max-width: 1100px; margin: 0 auto;">
+            <h2 class="section-title">Academic & Distinction Highlights</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>International Academic Awards</h3>
+                    <ul class="achievements-list" style="margin-top: 1rem;">
+                        <li><strong>Highest Mark in Europe, GCSE Mathematics</strong> – Outstanding Pearson Learner Awards (2025)</li>
+                        <li><strong>Highest Mark in Switzerland, iGCSE History</strong> – Outstanding Pearson Learner Awards (2025)</li>
+                        <li><strong>Junior Math Olympiad Merit Award</strong> – Recognized as Best in School (2022)</li>
+                        <li><strong>2x Senior Math Challenge Silver Certificate</strong> – Best in Year (2024, 2025)</li>
+                        <li><strong>Intermediate Math Challenge Gold Certificate</strong> – Second Best in Year (2022)</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Music, Leadership & Athletics</h3>
+                    <ul class="achievements-list" style="margin-top: 1rem;">
+                        <li><strong>ABRSM Grade 6 Piano Performance Certificate</strong> (2024)</li>
+                        <li><strong>ABRSM Grade 5 Music Theory Certificate</strong> (2023)</li>
+                        <li><strong>Silver Duke of Edinburgh Award</strong> (2025)</li>
+                        <li><strong>Bronze Duke of Edinburgh Award</strong> (2023)</li>
+                        <li><strong>Two-Time Vaud Canton Basketball Champion</strong> (2022-2023)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="extracurriculars">
+        <h2 class="section-title">Extracurricular Leadership</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Mathematics Tutoring</h3>
+                <p style="color: var(--text-light);">Volunteering time to instruct and mentor younger students in foundational and advanced mathematics, translating complex problem-solving frameworks into accessible learning concepts.</p>
+            </div>
+            <div class="card">
+                <h3>Classical Piano</h3>
+                <p style="color: var(--text-light);">Consistently training and mastering complex compositions, bridging rigorous technical execution with artistic interpretation.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Contact & Professional Network</h2>
+        <div class="card contact-info">
+            <p>For research collaborations, academic inquiries, or professional engagement, please reach out via the channels below:</p>
+            <p><strong>Email:</strong> <a href="mailto:mitrafdesai@gmail.com" style="color: var(--secondary); text-decoration: none;">mitrafdesai@gmail.com</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/mitrafdesai-ai/Foresight-" target="_blank" style="color: var(--secondary); text-decoration: none;">github.com/mitrafdesai-ai/Foresight-</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Mitra Desai. All Rights Reserved. Prepared for Academic and Clinical Portfolios.</p>
+    </footer>
+
+</body>
+</html>
